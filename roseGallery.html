@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rose Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Light mode styles */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Lucida Calligraphy",cursive;
+        }
+        
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Lucida Calligraphy",cursive;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .image-container img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        img:hover {
+            transform: scale(1.1);
+        }
+        
+        .dark-mode-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .dark-mode-btn:hover {
+            transform: translateX( 2px); /* Set the desired horizontal distance to slide */
+        }
+        
+        .sun-icon {
+            color: #ffc107;
+            font-size: 24px;
+        }
+        
+        .moon-icon {
+            color: #f8f9fa;
+            font-size: 28px;
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+     <script>
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+
+            var sunIcon = document.getElementById("sun-icon");
+            var moonIcon = document.getElementById("moon-icon");
+            
+            if (body.classList.contains("dark-mode")) {
+                sunIcon.style.display = "none";
+                moonIcon.style.display = "inline-block";
+            } else {
+                sunIcon.style.display = "inline-block";
+                moonIcon.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Rose Gallery</h1>
+    <div class="dark-mode-btn-container">
+        <button class="dark-mode-btn" onclick="toggleDarkMode()">
+            <span id="sun-icon" class="sun-icon">☀️</span>
+            <span id="moon-icon" class="moon-icon">🌙</span>
+        </button>
+    </div>
+    <div class="image-container">
+        <table>
+            <tr>
+                <td>
+                    <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRPxMz0AXjjr-TmYNloXDk_x1K6D_HRccDihSBl75vgRMYaliD-QtaZdfcPDrDMdAWH7uCvin5jV3qJn78" alt="Damask Rose Image">
+                    <p> Rosa × damascena, more commonly known as the Damask rose, or sometimes as the Bulgarian rose, Turkish rose, Taif rose, Arab rose, Ispahan rose and Castile rose, is a rose hybrid, derived from Rosa gallica and Rosa moschata.
+                        Scientific name: Rosa × damascena</p>
+                </td>
+                <td>
+                    <img src="https://www.ludwigsroses.co.za/wp-content/uploads/2015/08/iceberg5.jpg" alt="Climbing Ice Berg Rose">
+                    <p>Rosa 'KORbin' is a white floribunda rose cultivar bred by Kordes in Germany in 1958. It is also known as Iceberg, Fée des Neiges and Schneewittchen. 'KORbin' is among the world's best known roses.
+                        Scientific name: Rosa 'Climbing Iceberg'</p>
+                </td>
+                <td>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdX39s_EJs3ZEYyE7gvYjYUhzNNOp3c8dlXqlCPo9pXzM2J6X8K6RlF9YiGKGgnzrk1X8&usqp=CAU" alt="Rosa Queen Elizabeth">
+            <p>Rosa 'Queen Elizabeth' is a pink Grandiflora rose cultivar, bred by rose grower, Dr. Walter Lammerts in the United States in 1954. The rose variety is very popular worldwide and has won numerous awards, including "World's Favorite Rose". 
+                Scientific name: Rosa 'Queen Elizabeth'</p>
+                </td>
+                <td>
+                    <img src="https://alchetron.com/cdn/rosa-majalis-e9933c04-51a1-4ea7-a732-d6e95591b09-resize-750.jpeg" alt="Rosa Majalis">
+                    <p>Rosa majalis is a species of deciduous shrubs in the genus Rosa, native to forests of Europe and Siberia. It grows to 2 m. and yields edible hip fruits rich in vitamin C, which are used in medicine and to produce rose hip syrup. It is native to Siberia and northern Europe. 
+                    Scientific name: Rosa majalis</p>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>
